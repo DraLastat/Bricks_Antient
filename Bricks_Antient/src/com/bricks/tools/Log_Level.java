@@ -1,5 +1,12 @@
 package com.bricks.tools;
 
-public class Log_Level {
+/**
+ * 
+ * @author DraLastat
+ * @Description 
+ * 
+ */
+public enum Log_Level {
 
+	INFO, DEBUG, WARN, ERROR, FATAL
 }

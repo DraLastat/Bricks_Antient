@@ -33,7 +33,7 @@ import com.bricks.ui_pack.panel.Panel_Status;
 import com.bricks.ui_pack.panel.Panel_Sidebar;
 import com.bricks.background_runner.execution.Appium_Init;
 import com.bricks.node_selection.Variable_Observer;
-import com.bricks.tools.Device_Connetor;
+import com.bricks.tools.Device_Connector;
 import com.bricks.tools.Utils_Excel;
 import com.bricks.tools.Utils_SQL;
 
@@ -58,7 +58,7 @@ public class Main_Entry implements Global_Observer {
 	private Connection connection;
 
 	private Utils_SQL sql;
-	private Device_Connetor adb;
+	private Device_Connector adb;
 	public static ExecutorService cachedThreadPool = Executors.newFixedThreadPool(100);
 	private Variable_Observer obs = new Variable_Observer();
 	public static Utils_Excel exlUtil = null;
@@ -79,23 +79,17 @@ public class Main_Entry implements Global_Observer {
 		});
 	}
 
-	/**
-	 * 
-	 */
 	public Main_Entry() {
 		initialize();
 	}
 
-	/**
-	 * 
-	 */
 	private void initialize() {
 		PropertyConfigurator
 				.configure(Constants_UI.CURRENT_DIR + File.separator + "config" + File.separator + "log4j.properties");
 		LOG.info("==================BricksInitStart====================");
 
 		// init adb
-		adb = new Device_Connetor();
+		adb = new Device_Connector();
 		adb.registerObserver(Main_Entry.this);
 
 		// init UImanager

@@ -18,6 +18,12 @@ import com.bricks.tools.Utils_Excel;
 import com.bricks.tools.Systeminfo_Get;
 import com.bricks.tools.Utils_Timer;
 
+/**
+ * 
+ * @author DraLastat
+ * @Description 
+ */
+
 public class Performance_Watcher {
 	
 	private IDevice device;
@@ -184,7 +190,7 @@ public class Performance_Watcher {
 	//		infoList[0] = TimeUtils.formatTimeStamp(System.currentTimeMillis());
 			String casename = caseRun.getCaseName();
 	//		infoList[0] = timeStamp + "(" + casename.substring(0, casename.length()-5) + ")";
-			infoList[0] = TimeUtils.formatTimeStamp(System.currentTimeMillis()) + "(" + casename.substring(0, casename.length()-5) + ")";
+			infoList[0] = Utils_Timer.formatTimeStamp(System.currentTimeMillis()) + "(" + casename.substring(0, casename.length()-5) + ")";
 			float[] totalCpuInfo = sysInfo.getTotalCpu();
 			infoList[1] = (float)(Math.round(totalCpuInfo[0]*100)) / 100;
 			float settingCpu = (float)(Math.round(sysInfo.getProcessCpu(pids[0], "Setting", Math.round(totalCpuInfo[1]))*100)) / 100;
