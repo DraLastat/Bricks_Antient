@@ -27,6 +27,7 @@ import com.android.ddmlib.IDevice;
 import com.bricks.ui_pack.Constants_UI;
 import com.bricks.ui_pack.panel.Panel_Case_Creator;
 import com.bricks.ui_pack.panel.Panel_Case_Runner;
+import com.bricks.ui_pack.panel.Panel_Case_Runner_Data;
 import com.bricks.ui_pack.panel.Panel_Element_Creator;
 import com.bricks.ui_pack.panel.Panel_Setting_Main;
 import com.bricks.ui_pack.panel.Panel_Status;
@@ -144,11 +145,11 @@ public class Main_Entry implements Global_Observer {
 		statusPanel = new Panel_Status();
 		elecrePanel = new Panel_Element_Creator(obs, sql);
 		adb.registerObserver(elecrePanel);
-		casecrePanel = new CasecrePanel(sql);
+		casecrePanel = new Panel_Case_Creator(sql);
 		adb.registerObserver(casecrePanel);
-		caserunPanel = new CaserunPanel();
+		caserunPanel = new Panel_Case_Runner();
 		adb.registerObserver(caserunPanel);
-		settingPanel = new SettingPanel();
+		settingPanel = new Panel_Setting_Main();
 
 		mainPanel.add(toolbar, BorderLayout.WEST);
 

@@ -431,11 +431,11 @@ public class Panel_Case_Creator extends JPanel implements Observer, Global_Obser
 		RunPanel.add(buttonLogSave);
 
 		JPanel panelLog = new JPanel();
-		panelLog.setBackground(ConstantsUI.TOOL_BAR_BACK_COLOR);
+		panelLog.setBackground(Constants_UI.TOOL_BAR_BACK_COLOR);
 		panelLog.setLayout(new BorderLayout());
 		logArea = new JTextArea(17, 50);
-		logArea.setBackground(ConstantsUI.LOG_COLOR);
-		logArea.setForeground(ConstantsUI.MAIN_BACK_COLOR);
+		logArea.setBackground(Constants_UI.LOG_COLOR);
+		logArea.setForeground(Constants_UI.MAIN_BACK_COLOR);
 		logArea.setEditable(false);
 		PrintStream printStream = new PrintStream(new CustomOutputStream(logArea));
 		panelLog.add(new JScrollPane(logArea));
@@ -492,7 +492,7 @@ public class Panel_Case_Creator extends JPanel implements Observer, Global_Obser
 						Bricks_Bean brick = JSON.parseObject(str, Bricks_Bean.class);
 
 						if (brick.getProperty().equals("ele")) {
-							table_row[1] = PropertyUtil.getProperty("bricks.ui.casecre.ele");
+							table_row[1] = Utils_Property.getProperty("bricks.ui.casecre.ele");
 							table_row[2] = filepath.substring(filepath.lastIndexOf("\\") + 1,
 									filepath.lastIndexOf("_"));
 							table_row[3] = brick.getEle_page();
@@ -500,7 +500,7 @@ public class Panel_Case_Creator extends JPanel implements Observer, Global_Obser
 							model.addRow(table_row);
 						} else if (brick.getProperty().equals("act")) {
 							actionLoad(brick.getAction_name(), brick, true);
-							table_row[1] = PropertyUtil.getProperty("bricks.ui.casecre.act");
+							table_row[1] = Utils_Property.getProperty("bricks.ui.casecre.act");
 							table_row[2] = act_name;
 							table_row[3] = "N/A";
 							table_row[4] = "N/A";
@@ -508,26 +508,26 @@ public class Panel_Case_Creator extends JPanel implements Observer, Global_Obser
 						} else if (brick.getProperty().equals("val")) {
 							switch (brick.getValidation_name()) {
 							case 1:
-								table_row[1] = PropertyUtil.getProperty("bricks.ui.casecre.textver");
+								table_row[1] = Utils_Property.getProperty("bricks.ui.casecre.textver");
 								table_row[2] = brick.getParams().get("expect_text");
 								table_row[3] = "N/A";
 								table_row[4] = "N/A";
 								break;
 							case 2:
-								table_row[1] = PropertyUtil.getProperty("bricks.ui.casecre.extver");
+								table_row[1] = Utils_Property.getProperty("bricks.ui.casecre.extver");
 								table_row[2] = "N/A";
 								table_row[3] = "N/A";
 								table_row[4] = "N/A";
 								break;
 							case 3:
-								table_row[1] = PropertyUtil.getProperty("bricks.ui.casecre.cmpver");
+								table_row[1] = Utils_Property.getProperty("bricks.ui.casecre.cmpver");
 								table_row[2] = "N/A";
 								table_row[3] = "N/A";
 								table_row[4] = "N/A";
 							}
 							model.addRow(table_row);
 						} else if (brick.getProperty().equals("time")) {
-							table_row[1] = PropertyUtil.getProperty("bricks.ui.casecre.timer");
+							table_row[1] = Utils_Property.getProperty("bricks.ui.casecre.timer");
 							table_row[2] = brick.getParams().get("time");
 							table_row[3] = "N/A";
 							table_row[4] = "N/A";
@@ -552,7 +552,7 @@ public class Panel_Case_Creator extends JPanel implements Observer, Global_Obser
 					table_row[3] = comboxViewName.getSelectedItem();
 					table_row[4] = comboxEleName.getSelectedItem();
 
-					BrickBean brick = new BrickBean();
+					Bricks_Bean brick = new Bricks_Bean();
 					brick.setEle_xpath(xpath.toString());
 					brick.setCustom_name(cus_name.toString());
 					brick.setProperty("ele");
@@ -688,7 +688,7 @@ public class Panel_Case_Creator extends JPanel implements Observer, Global_Obser
 						model.setValueAt(comboxViewName.getSelectedItem(), i, 3);
 						model.setValueAt(comboxEleName.getSelectedItem(), i, 4);
 
-						BrickBean brick = new BrickBean();
+						Bricks_Bean brick = new Bricks_Bean();
 						brick.setEle_xpath(xpath.toString());
 						brick.setCustom_name(cus_name.toString());
 						brick.setProperty("ele");
@@ -779,10 +779,10 @@ public class Panel_Case_Creator extends JPanel implements Observer, Global_Obser
 					cus_save_frame.setSize(250, 120);
 					cus_save_frame.setVisible(true);
 					cus_save_frame.setLayout(new BorderLayout());
-					cus_save_frame.setLocation(MainEntry.frame.getLocationOnScreen());
-					cus_save_frame.setLocationRelativeTo(MainEntry.frame);
+					cus_save_frame.setLocation(Main_Entry.frame.getLocationOnScreen());
+					cus_save_frame.setLocationRelativeTo(Main_Entry.frame);
 					cus_save_frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-					cus_save_label.setFont(ConstantsUI.FONT_NORMAL);
+					cus_save_label.setFont(Constants_UI.FONT_NORMAL);
 					cus_save_text.setPreferredSize(new Dimension(100, 30));
 
 					cus_type_pane.add(cus_save_label);
@@ -840,10 +840,10 @@ public class Panel_Case_Creator extends JPanel implements Observer, Global_Obser
 					log_save_frame.setSize(250, 120);
 					log_save_frame.setVisible(true);
 					log_save_frame.setLayout(new BorderLayout());
-					log_save_frame.setLocation(MainEntry.frame.getLocationOnScreen());
-					log_save_frame.setLocationRelativeTo(MainEntry.frame);
+					log_save_frame.setLocation(Main_Entry.frame.getLocationOnScreen());
+					log_save_frame.setLocationRelativeTo(Main_Entry.frame);
 					log_save_frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-					log_save_label.setFont(ConstantsUI.FONT_NORMAL);
+					log_save_label.setFont(Constants_UI.FONT_NORMAL);
 					log_save_text.setPreferredSize(new Dimension(100, 30));
 
 					log_type_pane.add(log_save_label);
@@ -995,8 +995,8 @@ public class Panel_Case_Creator extends JPanel implements Observer, Global_Obser
 		Scrshot_image = new ImageIcon(scrshot_pathname.toString());
 		JLabel picLabel = new JLabel(Scrshot_image);
 		JPanel posibtn_pane = new JPanel();
-		buttonDragAdd = new Custom_Button(Constants_UI.ICON_ELE_ADD, ConstantsUI.ICON_ELE_ADD_ENABLE,
-				ConstantsUI.ICON_ELE_ADD_DISABLE, PropertyUtil.getProperty("bricks.ui.casecre.btntip.dragpoint"));
+		buttonDragAdd = new Custom_Button(Constants_UI.ICON_ELE_ADD, Constants_UI.ICON_ELE_ADD_ENABLE,
+				Constants_UI.ICON_ELE_ADD_DISABLE, Utils_Property.getProperty("bricks.ui.casecre.btntip.dragpoint"));
 		JLabel pointx = new JLabel();
 		JLabel pointy = new JLabel();
 		posibtn_pane.add(pointx);
@@ -1005,8 +1005,8 @@ public class Panel_Case_Creator extends JPanel implements Observer, Global_Obser
 		scrshot_frame.add(picLabel, BorderLayout.NORTH);
 		scrshot_frame.add(posibtn_pane, BorderLayout.SOUTH);
 		scrshot_frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-		scrshot_frame.setLocation(MainEntry.frame.getLocationOnScreen());
-		scrshot_frame.setLocationRelativeTo(MainEntry.frame);
+		scrshot_frame.setLocation(Main_Entry.frame.getLocationOnScreen());
+		scrshot_frame.setLocationRelativeTo(Main_Entry.frame);
 		point_chosen = null;
 
 		if (brick != null) {
@@ -1043,7 +1043,7 @@ public class Panel_Case_Creator extends JPanel implements Observer, Global_Obser
 
 							try {
 								table_row[1] = Utils_Property.getProperty("bricks.ui.casecre.act");
-								table_row[2] = PropertyUtil.getProperty("bricks.ui.casecre.act.pd");
+								table_row[2] = Utils_Property.getProperty("bricks.ui.casecre.act.pd");
 								table_row[3] = "X:" + scrshot_X;
 								table_row[4] = "Y:" + scrshot_Y;
 
@@ -1086,11 +1086,11 @@ public class Panel_Case_Creator extends JPanel implements Observer, Global_Obser
 
 		comboxViewName = new JComboBox<String>();
 		comboxViewName.setEditable(true);
-		comboxViewName.setPreferredSize(ConstantsUI.TEXT_COMBOX_SIZE_ITEM);
+		comboxViewName.setPreferredSize(Constants_UI.TEXT_COMBOX_SIZE_ITEM);
 
 		comboxEleName = new JComboBox<String>();
 		comboxEleName.setEditable(true);
-		comboxEleName.setPreferredSize(ConstantsUI.TEXT_COMBOX_SIZE_ITEM);
+		comboxEleName.setPreferredSize(Constants_UI.TEXT_COMBOX_SIZE_ITEM);
 
 		AutoCompleteSupport.install(comboxViewName, actEventList);
 		AutoCompleteSupport.install(comboxEleName, eleEventList);
@@ -1216,7 +1216,7 @@ public class Panel_Case_Creator extends JPanel implements Observer, Global_Obser
 		});
 	}
 
-	private void actionLoad(int actionInput, BrickBean brick, boolean caseLoad) {
+	private void actionLoad(int actionInput, Bricks_Bean brick, boolean caseLoad) {
 		boolean contains = false;
 		switch (actionInput) {
 		case 0:
@@ -1290,7 +1290,7 @@ public class Panel_Case_Creator extends JPanel implements Observer, Global_Obser
 		}
 
 		if (!contains && !caseLoad) {
-			table_row[1] = PropertyUtil.getProperty("bricks.ui.casecre.act");
+			table_row[1] = Utils_Property.getProperty("bricks.ui.casecre.act");
 			table_row[2] = act_name;
 			table_row[3] = "N/A";
 			table_row[4] = "N/A";
