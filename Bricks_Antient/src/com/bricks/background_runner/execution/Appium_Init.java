@@ -2,21 +2,14 @@ package com.bricks.background_runner.execution;
 
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 
 import org.apache.log4j.Logger;
-import org.eclipse.jetty.websocket.common.events.EventDriverFactory;
-import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import com.alibaba.fastjson.JSONObject;
 import com.android.ddmlib.IDevice;
-import com.bricks.background_runner.Alert_Listener;
-import com.bricks.tools.Utils_Excel;
 
 import io.appium.java_client.android.AndroidDriver;
-import io.appium.java_client.android.Setting;
-import io.appium.java_client.events.EventFiringWebDriverFactory;
 
 /**
  * 

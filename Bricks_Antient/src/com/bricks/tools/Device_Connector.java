@@ -7,22 +7,18 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import org.apache.log4j.Logger;
-import org.openqa.selenium.support.ui.Sleeper;
 
 import com.android.ddmlib.AdbCommandRejectedException;
 import com.android.ddmlib.AndroidDebugBridge;
 import com.android.ddmlib.AndroidDebugBridge.IDeviceChangeListener;
 import com.android.ddmlib.CollectingOutputReceiver;
 import com.android.ddmlib.IDevice;
-import com.android.ddmlib.InstallException;
 import com.android.ddmlib.ShellCommandUnresponsiveException;
 import com.android.ddmlib.SyncException;
 import com.android.ddmlib.TimeoutException;
 import com.bricks.Global_Observer;
 import com.bricks.Main_Entry;
-import com.bricks.tools.Performance_Watcher;
 import com.bricks.Subject_Listener;
-import com.gargoylesoftware.htmlunit.javascript.host.performance.Performance;
 
 /**
 *

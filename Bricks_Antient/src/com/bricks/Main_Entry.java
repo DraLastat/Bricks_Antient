@@ -22,17 +22,14 @@ import javax.swing.UnsupportedLookAndFeelException;
 import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
 
-import com.android.ddmlib.CollectingOutputReceiver;
 import com.android.ddmlib.IDevice;
 import com.bricks.ui_pack.Constants_UI;
 import com.bricks.ui_pack.panel.Panel_Case_Creator;
 import com.bricks.ui_pack.panel.Panel_Case_Runner;
-import com.bricks.ui_pack.panel.Panel_Case_Runner_Data;
 import com.bricks.ui_pack.panel.Panel_Element_Creator;
 import com.bricks.ui_pack.panel.Panel_Setting_Main;
 import com.bricks.ui_pack.panel.Panel_Status;
 import com.bricks.ui_pack.panel.Panel_Sidebar;
-import com.bricks.background_runner.execution.Appium_Init;
 import com.bricks.node_selection.Variable_Observer;
 import com.bricks.tools.Device_Connector;
 import com.bricks.tools.Utils_Excel;

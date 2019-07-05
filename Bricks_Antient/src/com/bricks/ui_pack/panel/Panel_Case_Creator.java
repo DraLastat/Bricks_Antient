@@ -30,9 +30,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 import java.util.Observable;
 import java.util.Observer;
@@ -57,30 +55,29 @@ import com.alibaba.fastjson.JSONObject;
 import com.android.ddmlib.AdbCommandRejectedException;
 import com.android.ddmlib.CollectingOutputReceiver;
 import com.android.ddmlib.IDevice;
-import com.android.ddmlib.MultiLineReceiver;
 import com.android.ddmlib.ShellCommandUnresponsiveException;
 import com.android.ddmlib.TimeoutException;
 import com.bricks.Global_Observer;
 import com.bricks.Main_Entry;
 import com.bricks.ui_pack.Bricks_Bean;
 import com.bricks.ui_pack.Constants_UI;
-import com.bricks.ui_pack.Element_Listener;
+
 import com.bricks.ui_pack.Custom_Button;
-import com.bricks.ui_pack.View_Listener;
 import com.bricks.background_runner.Execution_Main;
-import com.bricks.node_selection.Realtime_Screen_UI;
 import com.bricks.tools.Utils_File;
 import com.bricks.tools.Utils_Property;
 import com.bricks.tools.Utils_SQL;
-import com.bricks.tools.Time_Series_Chart;
 
 import ca.odell.glazedlists.BasicEventList;
 import ca.odell.glazedlists.EventList;
 import ca.odell.glazedlists.swing.AutoCompleteSupport;
 
 /**
- * Case create page
+ * 
+ * @author DraLastat
+ * @Description 
  */
+
 public class Panel_Case_Creator extends JPanel implements Observer, Global_Observer {
 
 	private static final long serialVersionUID = 1L;
@@ -494,7 +491,7 @@ public class Panel_Case_Creator extends JPanel implements Observer, Global_Obser
 						if (brick.getProperty().equals("ele")) {
 							table_row[1] = Utils_Property.getProperty("bricks.ui.casecre.ele");
 							table_row[2] = filepath.substring(filepath.lastIndexOf("\\") + 1,
-									filepath.lastIndexOf("_"));
+										   filepath.lastIndexOf("_"));
 							table_row[3] = brick.getEle_page();
 							table_row[4] = brick.getCustom_name();
 							model.addRow(table_row);
@@ -543,7 +540,6 @@ public class Panel_Case_Creator extends JPanel implements Observer, Global_Obser
 		});
 
 		buttonEleAdd.addActionListener(new ActionListener() {
-
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				try {
@@ -665,7 +661,6 @@ public class Panel_Case_Creator extends JPanel implements Observer, Global_Obser
 		});
 
 		buttonClear.addActionListener(new ActionListener() {
-
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				while (model.getRowCount() > 0)
@@ -829,7 +824,6 @@ public class Panel_Case_Creator extends JPanel implements Observer, Global_Obser
 		buttonLogSave.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-
 				try {
 					JFrame log_save_frame = new JFrame("SAVE");
 					JLabel log_save_label = new JLabel(Utils_Property.getProperty("bricks.ui.casecre.logsave"));
@@ -1181,7 +1175,6 @@ public class Panel_Case_Creator extends JPanel implements Observer, Global_Obser
 		});
 
 		comboxViewName.addItemListener(new ItemListener() {
-
 			@Override
 			public void itemStateChanged(ItemEvent e) {
 				// TODO Auto-generated method stub
@@ -1190,7 +1183,6 @@ public class Panel_Case_Creator extends JPanel implements Observer, Global_Obser
 		});
 
 		comboxEleName.addItemListener(new ItemListener() {
-
 			@Override
 			public void itemStateChanged(ItemEvent e) {
 				// TODO Auto-generated method stub

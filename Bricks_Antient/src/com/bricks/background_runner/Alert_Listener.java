@@ -1,11 +1,8 @@
 package com.bricks.background_runner;
 
-import org.openqa.selenium.Alert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.security.Credentials;
 
-import io.appium.java_client.events.api.general.AlertEventListener;
 import io.appium.java_client.events.api.general.ElementEventListener;
 
 /**

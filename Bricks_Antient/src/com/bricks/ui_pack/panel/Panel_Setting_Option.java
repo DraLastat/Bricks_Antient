@@ -11,7 +11,6 @@ import javax.swing.JTextField;
 
 import org.apache.log4j.Logger;
 
-import com.bricks.Main_Entry;
 import com.bricks.ui_pack.Constants_UI;
 import com.bricks.ui_pack.Custom_Button;
 import com.bricks.tools.Utils_Property;
