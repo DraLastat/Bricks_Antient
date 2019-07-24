@@ -56,7 +56,9 @@ public class Cus_Action {
 	//1.long press
 	public void longPress(WebElement ele) {
 		TouchAction touchAction = new TouchAction(driver);
-		driver.performTouchAction(touchAction.longPress(ele));
+//		driver.performTouchAction(touchAction.longPress(ele));
+		touchAction.longPress(ele);
+		touchAction.perform();
 	}
 	
 	//2.input text

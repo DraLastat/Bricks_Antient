@@ -45,6 +45,7 @@ public class Appium_Init {
 		return driver;
 	}
 	
+	@SuppressWarnings("rawtypes")
 	public void setUp() {
 		//init appium  
         DesiredCapabilities capabilities = new DesiredCapabilities();  

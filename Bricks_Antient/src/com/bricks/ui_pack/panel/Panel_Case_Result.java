@@ -136,15 +136,23 @@ public class Panel_Case_Result extends JPanel{
         run_num.setText("1");
         label_null.setPreferredSize(new Dimension(400,20));
 		
-		buttonCaseFind = new Custom_Button(Constants_UI.ICON_DOCREAD, Constants_UI.ICON_DOCREAD_ENABLE,
-                Constants_UI.ICON_DOCREAD_DISABLE, Utils_Property.getProperty("bricks.ui.casecre.btntip.docread"));
-		buttonCaseDelte = new Custom_Button(Constants_UI.ICON_ROW_DELETE, Constants_UI.ICON_ROW_DELETE_ENABLE,
-                Constants_UI.ICON_ROW_DELETE_DISABLE, Utils_Property.getProperty("bricks.ui.casecre.btntip.docdelte"));
-        buttonStart = new Custom_Button(Constants_UI.ICON_PLAY_LIST, Constants_UI.ICON_PLAY_LIST_ENABLE,
-				Constants_UI.ICON_PLAY_LIST_DISABLE, Utils_Property.getProperty("bricks.ui.casecre.btntip.playlist"));
+		buttonCaseFind = new Custom_Button(Constants_UI.ICON_DOCREAD, 
+										   Constants_UI.ICON_DOCREAD_ENABLE,
+										   Constants_UI.ICON_DOCREAD_DISABLE, 
+										   Utils_Property.getProperty("bricks.ui.casecre.btntip.docread"));
+		buttonCaseDelte = new Custom_Button(Constants_UI.ICON_ROW_DELETE, 
+											Constants_UI.ICON_ROW_DELETE_ENABLE,
+											Constants_UI.ICON_ROW_DELETE_DISABLE, 
+											Utils_Property.getProperty("bricks.ui.casecre.btntip.docdelte"));
+        buttonStart = new Custom_Button(Constants_UI.ICON_PLAY_LIST, 
+        								Constants_UI.ICON_PLAY_LIST_ENABLE,
+        								Constants_UI.ICON_PLAY_LIST_DISABLE, 
+        								Utils_Property.getProperty("bricks.ui.casecre.btntip.playlist"));
         //buttonStart.setEnabled(false);
-        buttonChart = new Custom_Button(Constants_UI.ICON_RTCHART, Constants_UI.ICON_RTCHART_ENABLE,
-				Constants_UI.ICON_RTCHART_DISABLE, Utils_Property.getProperty("bricks.ui.casecre.btntip.rtchart"));
+        buttonChart = new Custom_Button(Constants_UI.ICON_RTCHART, 
+        								Constants_UI.ICON_RTCHART_ENABLE,
+        								Constants_UI.ICON_RTCHART_DISABLE, 
+        								Utils_Property.getProperty("bricks.ui.casecre.btntip.rtchart"));
         //buttonStop.setEnabled(false);
         
         panelList.add(new JScrollPane(List_table));
@@ -176,21 +184,24 @@ public class Panel_Case_Result extends JPanel{
         logprint.setWrapStyleWord(true);
         logprint.setForeground(Constants_UI.MAIN_BACK_COLOR);
         logprint.setBackground(Constants_UI.TABLE_BACK_COLOR);
-		buttonLogSave = new Custom_Button(Constants_UI.ICON_LOGSAVE, Constants_UI.ICON_LOGSAVE_ENABLE,
-				Constants_UI.ICON_LOGSAVE_DISABLE, Utils_Property.getProperty("bricks.ui.casecre.btntip.logsave"));
+		buttonLogSave = new Custom_Button(Constants_UI.ICON_LOGSAVE, 
+										  Constants_UI.ICON_LOGSAVE_ENABLE,
+										  Constants_UI.ICON_LOGSAVE_DISABLE, 
+										  Utils_Property.getProperty("bricks.ui.casecre.btntip.logsave"));
 		labelRunLogTitle.setFont(Constants_UI.FONT_NORMAL);
 		labelRunLogTitle.setPreferredSize(Constants_UI.LABLE_SIZE_ITEM);
 		labellogprintNull.setPreferredSize(Constants_UI.LABLE_SIZE_CASE_NULL_ITEM);
 		labellogprintNull2.setPreferredSize(new Dimension(480,40));
+	
 		panelGridLog.add(labelRunLogTitle);
 		panelGridLog.add(labellogprintNull);
 		panelGridLog.add(new JScrollPane(logprint));
 		panelGridLog.add(labellogprintNull2);
 		panelGridLog.add(buttonLogSave);
 
-
 		panelCenter.add(panelGridCaseFind);
 		panelCenter.add(panelGridLog);
+		
 		return panelCenter;
 	}
 	
@@ -253,7 +264,7 @@ public class Panel_Case_Result extends JPanel{
 					
 					@Override
 					public void run() {
-						
+						//TODO package name auto catcher
 						switch (appName) {
 							case "DJI GO4":
 		            			pkg = "dji.go.v4";
@@ -338,83 +349,5 @@ public class Panel_Case_Result extends JPanel{
 
             }
         });
-		
-//		buttonChart.addActionListener(new ActionListener() {
-//			
-//			@Override
-//			public void actionPerformed(ActionEvent e) {
-//				// TODO Auto-generated method stub
-//				JFrame appSelectFrame = new JFrame();
-//				appSelectFrame.setSize(270, 130);
-//				appSelectFrame.setTitle("App Select");
-//				appSelectFrame.setLayout(new BorderLayout());
-//				appSelectFrame.setLocation(MainEntry.frame.getLocationOnScreen());
-//				appSelectFrame.setLocationRelativeTo(MainEntry.frame);
-//				
-//				JPanel appSelectPanel = new JPanel();
-//				appSelectPanel.setPreferredSize(new Dimension(270, 60));
-//				JLabel appName = new JLabel(PropertyUtil.getProperty("bricks.ui.casecre.appname"));
-//				appName.setFont(ConstantsUI.FONT_NORMAL);
-//				JComboBox<String> comboxAppName = new JComboBox<String>();
-//				comboxAppName.setPreferredSize(new Dimension(150, 40));
-//				comboxAppName.addItem("DJI GO3");
-//				comboxAppName.addItem("DJI GO4");
-//				comboxAppName.addItem("DJI Pilot");
-//				comboxAppName.addItem("RM500 Launcher");
-//				comboxAppName.addItem("RM500 Settings");
-//				comboxAppName.addItem("MG 1A/P");
-//				comboxAppName.addItem("MG 1S");
-//				comboxAppName.addItem("DJI GO4 Pad");
-//				comboxAppName.addItemListener(new ItemListener() {
-//					
-//					@Override
-//					public void itemStateChanged(ItemEvent e) {
-//						// TODO Auto-generated method stub
-//						if (e.getStateChange() == ItemEvent.SELECTED) {
-//							switch ((String)e.getItem()) {
-//								case "DJI GO4":
-//			            			pkg = "dji.go.v4";
-//			            			break;
-//			            		case "DJI GO3":
-//			            			pkg = "dji.pilot";
-//			            			break;
-//			            		case "RM500 Launcher":
-//			            			pkg = "com.dpad.launcher";
-//			            			break;
-//			            		case "RM500 Settings":
-//			            			pkg = "com.android.settings.Settings";
-//			            			break;
-//			            		case "MG 1A/P":
-//			            			pkg = "dji.prof.mg";
-//			            			break;
-//			            		case "MG 1S":
-//			            			pkg = "dji.prof.args.tiny";
-//			            			break;
-//			            		case "DJI GO4 Pad":
-//			            			pkg = "dji.pilot.pad";
-//			            			break;
-//							}
-//						}
-//					}
-//				});
-//				
-//				MyIconButton buttonWatchStart = new MyIconButton(ConstantsUI.ICON_PLAY, ConstantsUI.ICON_PLAY_ENABLE,
-//						ConstantsUI.ICON_PLAY_DISABLE, PropertyUtil.getProperty("bricks.ui.runresult.btnwatch"));
-//				buttonWatchStart.addActionListener(new ActionListener() {
-//					
-//					@Override
-//					public void actionPerformed(ActionEvent e) {
-//						// TODO Auto-generated method stub
-//						
-//					}
-//				});
-//				
-//				appSelectPanel.add(appName);
-//				appSelectPanel.add(comboxAppName);
-//				appSelectFrame.add(appSelectPanel, BorderLayout.NORTH);
-//				appSelectFrame.add(buttonWatchStart, BorderLayout.SOUTH);
-//				appSelectFrame.setVisible(true);
-//			}
-//		});
 	}
 }
