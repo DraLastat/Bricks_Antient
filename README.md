@@ -48,7 +48,11 @@ Android应用自动化测试平台，基于Appium，通过实时获取手机界�
 
 ## Install
 
+This project uses [node](http://nodejs.org) and [npm](https://npmjs.com). Go check them out if you don't have them locally installed.
 
+```sh
+$ npm install --global standard-readme-spec
+```
 
 ```
 ```
