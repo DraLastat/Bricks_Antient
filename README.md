@@ -44,7 +44,7 @@ $ npm install -g cnpm --registry=https://registry.npm.taobao.org
 ```sh
 $ cnpm install -g appium@1.8.1
 ```
-最后将项目代码clone至本地，执行 [Main_Entry.java](Main_Entry.java)即可运行Bricks平台。
+最后将项目代码clone至本地，执行 [Main_Entry.java](https://github.com/DraLastat/Bricks_Antient/blob/master/Bricks_Antient/src/com/bricks/Main_Entry.java)即可运行Bricks平台。
 
 ## 如何使用
 
@@ -73,7 +73,7 @@ Install Appium 1.8.1：
 ```sh
 $ npm install -g appium@1.8.1
 ```
-Clone this project to your local enviroment, run the [Main_Entry.java](Main_Entry) to active the platform.
+Clone this project to your local enviroment, run the [Main_Entry.java](https://github.com/DraLastat/Bricks_Antient/blob/master/Bricks_Antient/src/com/bricks/Main_Entry.java) to active the platform.
 
 ### Any optional sections
 
